@@ -52,7 +52,7 @@ INT_MAX indicates no edge between i and j (∞).
 ⚠️ Detecting Negative Weight Cycles
 
 After the algorithm:
-
+```cpp
 for (int i = 0; i < V; ++i)
     if (dist[i][i] < 0)
         cout << "Graph contains a negative weight cycle\n";
@@ -66,7 +66,7 @@ for (int i = 0; i < V; ++i)
 Use a next[i][j] matrix to store intermediate path information.
 
 Initialization:
-
+```cpp
 if (i != j && dist[i][j] != INF)
     next[i][j] = j;
 
@@ -78,7 +78,7 @@ if (dist[i][j] > dist[i][k] + dist[k][j]) {
 }
 
 Path recovery:
-
+```cpp
 vector<int> getPath(int u, int v) {
     if (next[u][v] == -1) return {};
     vector<int> path = {u};
@@ -94,7 +94,7 @@ vector<int> getPath(int u, int v) {
 ⸻
 
 🧪 Example Input Matrix
-
+```cpp
 // Adjacency matrix, INT_MAX = ∞
 vector<vector<int>> dist = {
     {0,     3,   INT_MAX, 5},
