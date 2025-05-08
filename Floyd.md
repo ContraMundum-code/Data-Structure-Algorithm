@@ -36,7 +36,8 @@ Best Use Case	Small graphs (V ≤ 500) with many edges (dense graphs)
 
 🧮 Pseudocode / C++ Template
 
-'''void floydWarshall(vector<vector<int>>& dist) {
+```cpp
+void floydWarshall(vector<vector<int>>& dist) {
     int V = dist.size();
     for (int k = 0; k < V; ++k)          // Intermediate node
         for (int i = 0; i < V; ++i)      // Start node
@@ -44,7 +45,6 @@ Best Use Case	Small graphs (V ≤ 500) with many edges (dense graphs)
                 if (dist[i][k] != INT_MAX && dist[k][j] != INT_MAX)
                     dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
 }
-'''
 INT_MAX indicates no edge between i and j (∞).
 
 ⸻
